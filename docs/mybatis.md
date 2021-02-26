@@ -2,7 +2,7 @@
 
 ## MyBatis Generator
 
-Generate mybatis files if database schema updated.
+Generate mybatis files if com.azure.graduate.database schema updated.
 ```bash
 # In root directory, ignore if you have done this.
 mvn install
