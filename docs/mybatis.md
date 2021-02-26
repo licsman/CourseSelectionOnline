@@ -7,7 +7,7 @@ Generate mybatis files if com.azure.graduate.database schema updated.
 # In root directory, ignore if you have done this.
 mvn install
 
-mvn -Dmybatis.generator.jdbcURL=jdbc:mysql://127.0.0.1:3306/onlineCourseSelection?useSSL=false -Dmybatis.generator.jdbcUserId=root -Dmybatis.generator.jdbcPassword=MySQL!23 mybatis-generator:generate
+mvn -Dmybatis.generator.jdbcURL=jdbc:mysql://127.0.0.1:3306/azure1?useSSL=false -Dmybatis.generator.jdbcUserId=root -Dmybatis.generator.jdbcPassword=MySQL!23 mybatis-generator:generate
 ```
 
 You can also add a maven task in IDE and pass `mybatis.generator.jdbcURL`,
