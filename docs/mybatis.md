@@ -8,6 +8,8 @@ Generate mybatis files if com.azure.graduate.database schema updated.
 mvn install
 
 mvn -Dmybatis.generator.jdbcURL=jdbc:mysql://127.0.0.1:3306/azure1?useSSL=false -Dmybatis.generator.jdbcUserId=root -Dmybatis.generator.jdbcPassword=MySQL!23 mybatis-generator:generate
+
+mvn -Dmybatis.generator.jdbcURL=jdbc:mysql://127.0.0.1:3306/azure1 -Dmybatis.generator.jdbcUserId=root -Dmybatis.generator.jdbcPassword=MySQL!23 mybatis-generator:generate
 ```
 
 You can also add a maven task in IDE and pass `mybatis.generator.jdbcURL`,
@@ -23,3 +25,5 @@ Mybatis generator uses file [`generatorConfig.xml`][] in `orange` directory to g
 * [MyBatis Generator](http://www.mybatis.org/generator/running/running.html)
 
 [`generatorConfig.xml`]: http://www.mybatis.org/generator/configreference/table.html
+
+http://localhost:8088/swagger-ui.html#/

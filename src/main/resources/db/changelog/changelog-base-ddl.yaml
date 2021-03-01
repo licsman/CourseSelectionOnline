@@ -1,0 +1,60 @@
+databaseChangeLog:
+  - changeSet:
+      id: init onlineCourseSelection tables
+      author: azure
+      comment: create tables
+      changes:
+        - createTable:
+            tableName: system_admin
+            columns:
+              - column:
+                  name: admin_id
+                  type: bigint(20)
+                  remarks: "管理员ID"
+                  autoIncrement: true
+                  constraints:
+                    primaryKey: true
+                    nullable: false
+              - column:
+                  name: admin_account
+                  type: varchar(250)
+                  remarks: "管理员登录账号"
+                  constraints:
+                    nullable: false
+              - column:
+                  name: admin_password
+                  type: varchar(800)
+                  remarks: "管理员登录密码"
+              - column:
+                  name: admin_gender
+                  type: int
+                  remarks: "管理员性别"
+              - column:
+                  name: admin_description
+                  type: varchar(2000)
+                  remarks: "管理员备注信息"
+              - column:
+                  name: admin_phone
+                  type: varchar(255)
+                  remarks: "管理员手机号"
+              - column:
+                  name: admin_thumb
+                  type: varchar(2000)
+                  remarks: "管理员缩略图"
+              - column:
+                  defaultValueComputed: CURRENT_TIMESTAMP
+                  name: admin_create_time
+                  type: TIMESTAMP
+                  remarks: "管理员创建时间"
+                  constraints:
+                    nullable: false
+  - changeSet:
+      id:  init super administrator
+      author:  azure
+      changes:
+        - sql:
+            comment:  insert super administrator info
+            dbms: 'mysql'
+            splitStatements:  true
+            sql:  insert into azure1.system_admin(admin_id, admin_account, admin_password, admin_gender, admin_description, admin_phone, admin_thumb, admin_create_time) values ('1', 'admin', 'admin123', '1', 'admin info', '18295104154', 'www.baidu.com', current_timestamp())
+            stripComments:  true
