@@ -2,7 +2,7 @@ databaseChangeLog:
   - changeSet:
       id: init onlineCourseSelection tables
       author: azure
-      comment: create tables
+      comment: create base tables
       changes:
         - createTable:
             tableName: system_admin
