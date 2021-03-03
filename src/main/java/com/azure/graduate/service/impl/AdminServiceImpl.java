@@ -19,7 +19,7 @@ public class AdminServiceImpl implements AdminService {
     private SystemAdminMapper adminMapper;
 
     @Override
-    public String adminLogin(AdminLoginEntity adminLoginEntity) {
+    public SystemAdmin adminLogin(AdminLoginEntity adminLoginEntity) {
         SystemAdminExample systemAdminExample = new SystemAdminExample().or()
                 .andAdminAccountEqualTo(adminLoginEntity.getAdminAccount())
                 .andAdminPasswordEqualTo(adminLoginEntity.getAdminPassword())
@@ -29,6 +29,6 @@ public class AdminServiceImpl implements AdminService {
         SystemAdmin admin = adminMapper.selectOneByExample(systemAdminExample);
 
         logger.info("info:{}", admin);
-        return admin.toString();
+        return admin;
     }
 }

@@ -1,7 +1,8 @@
 package com.azure.graduate.service;
 
 import com.azure.graduate.common.entity.AdminLoginEntity;
+import com.azure.graduate.db.model.SystemAdmin;
 
 public interface AdminService {
-    String adminLogin (AdminLoginEntity adminLoginEntity);
+    SystemAdmin adminLogin (AdminLoginEntity adminLoginEntity);
 }
